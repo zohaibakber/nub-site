@@ -1,11 +1,15 @@
 ---
+import { FloatingNavDemo } from "@/components/Navbar";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="container mx-auto">
-    <h1 class="text-center text-6xl font-bold">
-      Dispatch with 21st century tools.
+<Layout title="DispatchNub">
+  <FloatingNavDemo client:load />
+  <main class="h-[100rem] relative">
+    <div class="bg-grid-black/[0.2] h-full w-full absolute top-0 opacity-30">
+    </div>
+    <h1 class="text-center text-6xl font-bold py-14 tracking-tighter">
+      Dispatch with 21<sup>st</sup> century tools.
     </h1>
   </main>
 </Layout>

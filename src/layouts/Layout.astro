@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import "@fontsource/geist-mono";
 ---
 
 <!doctype html>
@@ -20,3 +21,9 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
+
+<style>
+  body {
+    font-family: "Geist Mono", monospace;
+  }
+</style>
