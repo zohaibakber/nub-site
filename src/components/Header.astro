@@ -1,0 +1,52 @@
+---
+import { cn } from "@/utils/cn";
+
+const { pathname } = Astro.url;
+console.log(pathname);
+const links = [
+  {
+    label: "Home",
+    url: "/",
+  },
+  {
+    label: "About",
+    url: "/about/",
+  },
+  {
+    label: "Blog",
+    url: "/blog/",
+  },
+];
+---
+
+<header>
+  <nav class="flex container mx-auto justify-between items-center">
+    <a href="/" class="text-2xl font-bold text-gray-900 hover:text-gray-700">
+      Astro
+    </a>
+    <ul class="flex gap-4 items-center justify-center py-4">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.url}
+              class={cn(
+                "font-semibold hover:text-gray-700",
+                pathname === link.url
+                  ? "text-gray-900 underline"
+                  : "text-gray-500"
+              )}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <a
+      href="https://app.dispatchnub.com"
+      class="rounded-2xl border-2 border-dashed border-black bg-white px-6 py-1 font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none"
+      >Login</a
+    >
+  </nav>
+</header>

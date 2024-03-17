@@ -9,6 +9,7 @@ import { cn } from "@/utils/cn";
 
 export const FloatingNav = ({
   navItems,
+  loginLink,
   className,
 }: {
   navItems: {
@@ -16,6 +17,7 @@ export const FloatingNav = ({
     link: string;
     icon?: JSX.Element;
   }[];
+  loginLink?: string;
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
@@ -71,7 +73,7 @@ export const FloatingNav = ({
           </a>
         ))}
         <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
+          <a href={loginLink}>Login</a>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button>
       </motion.div>

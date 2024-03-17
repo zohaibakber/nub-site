@@ -1,10 +1,12 @@
 ---
-import { FloatingNavDemo } from "@/components/Navbar";
-import Layout from "../layouts/Layout.astro";
+import { FloatingNavbar } from "@/components/Navbar";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
 ---
 
 <Layout title="DispatchNub">
-  <FloatingNavDemo client:visible />
+  <FloatingNavbar client:visible />
+  <Header />
   <main class="h-[100rem] relative">
     <div class="bg-grid-black/[0.2] h-full w-full absolute top-0 opacity-30">
     </div>
