@@ -1,32 +1,18 @@
 ---
 import { cn } from "@/utils/cn";
+import {navLinks} from "@/consts"
 
 const { pathname } = Astro.url;
-console.log(pathname);
-const links = [
-  {
-    label: "Home",
-    url: "/",
-  },
-  {
-    label: "About",
-    url: "/about/",
-  },
-  {
-    label: "Blog",
-    url: "/blog/",
-  },
-];
 ---
 
 <header>
   <nav class="flex container mx-auto justify-between items-center">
     <a href="/" class="text-2xl font-bold text-gray-900 hover:text-gray-700">
-      Astro
+     DispatchNub 
     </a>
     <ul class="flex gap-4 items-center justify-center py-4">
       {
-        links.map((link) => (
+        navLinks.map((link) => (
           <li>
             <a
               href={link.url}
